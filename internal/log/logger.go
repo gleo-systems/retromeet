@@ -17,6 +17,10 @@ func init() {
 	instance = zap.New(stdOutWriterCore, zap.AddCaller()).Sugar()
 }
 
+func GetLogger() *zap.Logger {
+	return instance.Desugar()
+}
+
 func createEncoder() zapcore.Encoder {
 	encoderConfig := zap.NewProductionEncoderConfig()
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -29,17 +33,17 @@ func createStdoutWriter() zapcore.WriteSyncer {
 }
 
 func Info(template string, args ...interface{}) {
-	instance.Infof(template, args)
+	instance.Infof(template, args...)
 }
 
 func Debug(template string, args ...interface{}) {
-	instance.Debugf(template, args)
+	instance.Debugf(template, args...)
 }
 
 func Warn(template string, args ...interface{}) {
-	instance.Warnf(template, args)
+	instance.Warnf(template, args...)
 }
 
 func Error(template string, args ...interface{}) {
-	instance.Errorf(template, args)
+	instance.Errorf(template, args...)
 }

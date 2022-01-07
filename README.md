@@ -21,6 +21,8 @@ Start application server by executing command `go run main.go server`.
 * `test` contains application tests code.
 
 ## Future improvements
+* improve DB connection,
 * add Docker descriptor,
 * add Kubernetes descriptor,
-* integrate with SES AWS email service. 
+* integrate with SES AWS email service,
+* `gocraft/health` implement health check feature.
