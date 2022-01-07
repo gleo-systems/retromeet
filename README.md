@@ -2,12 +2,13 @@
 RetroMeet is a web browser application for software developers.<br />
 The tool improves development process by facilitating retrospective ceremonies.
 
-## Running application server
-Start server with `go run main.go` or `retromeet run -p 8080`.
+## Running application
+Set required OS environmental variables.<br />
+Start application server by executing command `go run main.go server`.
 
 ## Technology stack
-* `Go` language,
-* `Amazon Web Services` cloud,
+* `Go` programming language,
+* `Amazon AWS` cloud provider,
 * `Kubernetes` containers,
 * `Postgres` database.
 
