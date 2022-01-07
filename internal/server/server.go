@@ -1,8 +1,8 @@
 package server
 
 import (
-	"fmt"
-	"github.com/spf13/viper"
+	"github.com/gleo-systems/retromeet/internal/env"
+	"github.com/gleo-systems/retromeet/internal/log"
 )
 
 type AppServer interface {
@@ -14,11 +14,11 @@ type appServerImpl struct {
 }
 
 func (as *appServerImpl) Start() {
-	fmt.Printf("Starting server on port: %v\n", as.port)
+	log.Info("Starting server on port: %v", as.port)
 }
 
 func NewInstance() AppServer {
-	port := viper.GetInt("port")
+	port := env.GetIntVar("port")
 
 	// TODO: akokot - TBD
 	return &appServerImpl{port}
